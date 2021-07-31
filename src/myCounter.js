@@ -16,14 +16,13 @@
 */
 
 const myCounter = () => {
-  var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
-    myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
-    }
+  let myArray = [];
+  for (let counter = 0; counter <= 3; counter += 1) {
+    myArray.push(counter); // o primeiro loop só adiciona + 1 ao counter quando o segundo loop terminar
+    for (let counter2 = 2; counter2 <= 3; counter2 += 1) {
+      myArray.push(counter2); // quando a 1 fase do loop terminar, [0, 2, 3..].
+    } // Assim segue até a variável counter ter o valor > 3 encerrando todo loop, [0, 2, 3..].
   }
   return myArray;
 };
-
 module.exports = myCounter;
